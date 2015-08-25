@@ -2,7 +2,6 @@ package my.restful;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -14,15 +13,16 @@ import java.io.InputStreamReader;
 /**
  * @author Chen Chao
  */
-public class ApacheHttpClientGet {
+public class ApacheHttpClientPost {
     public static void main(String[] args) {
         try {
 
             DefaultHttpClient httpClient = new DefaultHttpClient();
-            HttpGet getRequest = new HttpGet (
-                    "http://localhost:8080/plainjson");
-            getRequest.addHeader("accept", "application/json");
-
+            HttpPost getRequest = new HttpPost (
+                    "http://localhost:8080/json");
+            StringEntity input = new StringEntity("{\"id\":100,\"content\":\"iPad 5\"}");
+            input.setContentType("application/json");
+            getRequest.setEntity(input);
             HttpResponse response = httpClient.execute(getRequest);
 
 

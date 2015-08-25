@@ -17,17 +17,16 @@ public class GreetingController {
     }
 
 
-//     controller
-//    @ResponseBody
-//    @RequestMapping("/json")
-//    public Greeting getDescription(@RequestBody Greeting stats){
-//        System.out.print("Got it");
-//        return stats;
-//    }
+    @ResponseBody
+    @RequestMapping("/json")
+    public Greeting getDescription(@RequestBody Greeting stats){
+        System.out.print("Got it");
+        return stats;
+    }
 
 
     @ResponseBody
-    @RequestMapping("/json")
+    @RequestMapping("/plainjson")
     public Greeting getDescription(){
         System.out.print("Got it");
         return new Greeting(1,"asdf");
