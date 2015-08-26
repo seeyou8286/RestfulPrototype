@@ -20,7 +20,7 @@ public class GreetingController {
     @ResponseBody
     @RequestMapping("/json")
     public Greeting getDescription(@RequestBody Greeting stats){
-        System.out.print("Got it");
+        System.out.print("Got it from RequestBody");
         return stats;
     }
 
