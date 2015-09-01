@@ -22,7 +22,7 @@ public class ApacheHttpClientGet {
             HttpGet getRequest = new HttpGet (
                     "http://localhost:8080/plainjson");
             getRequest.addHeader("accept", "application/json");
-
+            getRequest.addHeader("clientId", "1");
             HttpResponse response = httpClient.execute(getRequest);
 
 
